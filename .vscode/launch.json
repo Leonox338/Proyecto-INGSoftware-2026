@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Interfaz_Registro",
             "request": "launch",
+            "mainClass": "Modulo_1.Vista1.Interfaz_Registro",
+            "projectName": "Proyecto de ing_9224e92d"
+        },
+        {
+            "type": "java",
+            "name": "Interfaz_Registro",
+            "request": "launch",
             "mainClass": "Modulo1.Vista.Interfaz_Registro",
             "projectName": "Proyecto de ing_9224e92d"
         },
