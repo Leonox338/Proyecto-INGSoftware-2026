@@ -1,4 +1,4 @@
-package Modulo_1;
+package Modulo_1.Vista1;
 import javax.swing.SwingUtilities;
 public class Main {
     public static void main(String[] args) {

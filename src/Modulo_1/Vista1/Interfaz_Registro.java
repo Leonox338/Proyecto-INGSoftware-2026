@@ -1,5 +1,5 @@
 
-package Modulo_1;
+package Modulo_1.Vista1;
 
 import java.awt.Color;
 
