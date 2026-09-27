@@ -1,1 +1,98 @@
-
+package Modulo_1.Modelo1;
+import Data.Usuarios.Usuario;
+import java.nio.file.StandardOpenOption;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Scanner;
+public class GuardarEnData {
+public void GuardarUsuarios( Usuario u) throws IOException
+{
+  switch(u.Urol.toLowerCase()){
+      case ("estudiante"):
+      Path RutaUsuarioEstudiantes = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Estudiantes.txt");
+      String ContenidoEstudiante= """
+                    --------------------------------------
+                        Nombre: %s
+                        Apellido: %s
+                        Cedula: %s
+                        Correo: %s
+                        Rol: %s
+                        Facultad: %s
+                        Carrera: %s
+                    --------------------------------------
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.E.Efacultad,u.E.Ecarrera);
+      Files.writeString(RutaUsuarioEstudiantes, ContenidoEstudiante, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
+      break;
+      case ("empleado")://C:\Users\Usuario\Documents\visual estudio azul\Proyecto de ing\src\data
+          Path RutaUsuarioEmpleados = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Empleadoss.txt");
+          String ContenidoEmpleado= """
+                    --------------------------------------
+                        Nombre: %s
+                        Apellido: %s
+                        Cedula: %s
+                        Correo: %s
+                        Rol: %s
+                        Facultad: %s
+                        Carrera: %s
+                        Area: %s 
+                    --------------------------------------
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.Emp.EmpArea);
+      Files.writeString(RutaUsuarioEmpleados, ContenidoEmpleado, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
+      break;
+      case ("profesor"):
+          Path RutaUsuarioProfesor = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Profesores.txt");
+          String ContenidoProfesor= """
+                    --------------------------------------
+                        Nombre: %s
+                        Apellido: %s
+                        Cedula: %s
+                        Correo: %s
+                        Rol: %s
+                        Facultad: %s
+                        Carrera: %s
+                        Materia que Dicta: %s 
+                    --------------------------------------
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.P.Pfacultad,u.P.PCarrera,u.P.PMateria);
+      Files.writeString(RutaUsuarioProfesor, ContenidoProfesor, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
+      break;
+      case ("conductor"):
+         Path RutaUsuarioConductor = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Conductores.txt");
+         String licen;
+         if(u.C.Clicencia==false){
+             licen = "sin licencia" ;
+         }else{
+             licen= "licencia Certificada";
+         }
+         String ContenidoConductor= """
+                    --------------------------------------
+                        Nombre: %s
+                        Apellido: %s
+                        Cedula: %s
+                        Correo: %s
+                        Rol: %s
+                        Licenia %s 
+                    --------------------------------------
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,licen);
+      Files.writeString(RutaUsuarioConductor, ContenidoConductor, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
+      break;
+      case ("publico general"):
+      Path RutaUsuarioPublicG = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Publico_General.txt");
+          String ContenidoPG= """
+                    --------------------------------------
+                        Nombre: %s
+                        Apellido: %s
+                        Cedula: %s
+                        Correo: %s
+                        Rol: %s
+                        Direccion: %s 
+                    --------------------------------------
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.PG.PGDireccion);
+      Files.writeString(RutaUsuarioPublicG, ContenidoPG, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
+      break;
+      default:
+      break;
+  }//Del Switch
+}// de la funcion
+}// de la clase
