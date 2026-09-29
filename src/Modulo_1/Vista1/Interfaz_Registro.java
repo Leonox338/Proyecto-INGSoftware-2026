@@ -1,7 +1,12 @@
 
 package Modulo_1.Vista1;
-
+import java.util.logging.Logger;
 import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import javax.swing.JOptionPane;
+import Modulo_1.Modelo1.GuardarEnData;
+import data.Usuario.Usuario;
 
 public class Interfaz_Registro extends javax.swing.JFrame {
 
@@ -379,7 +384,27 @@ pack();
     }//GEN-LAST:event_SeleccionRolMouseExited
 
     private void PanelBotonRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelBotonRegistroMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "REGISTRANDO:\n Usuario: " + TextFieldNombre.getText() + "" + TextFieldApellido.getText() + "\n Rol: " + SeleccionRol.getSelectedItem().toString());
+       Usuario User;
+      String nombre,apellido,correo,rol;
+      int cedula;
+      nombre= TextFieldNombre.getText();
+      apellido=TextFieldApellido.getText();
+     // String textocedula=TextFieldCedula.getText();
+      cedula= Integer.valueOf(TextFieldCedula.getText().trim());
+      correo=TextFieldEmail.getText();
+      rol=SeleccionRol.getSelectedItem().toString();
+      User=new Usuario(nombre,apellido,cedula,correo,rol);
+        try {
+            GuardarEnData D=new GuardarEnData();
+            if(D.GuardarUsuarios(User)){
+                String mensaje="!Registro Guardado con Exito \n\n"+"Nombre: "+nombre+" "+apellido+"\n"+"Correo: "+correo;
+                JOptionPane.showMessageDialog(this,mensaje, "Registro Exitoso!", JOptionPane.INFORMATION_MESSAGE);
+            }
+//javax.swing.JOptionPane.showMessageDialog(this, "REGISTRANDO:\n Usuario: " + TextFieldNombre.getText() + "" + TextFieldApellido.getText() + "\n Rol: " + SeleccionRol.getSelectedItem().toString());
+        } catch (IOException ex) {
+            Logger.getLogger(Interfaz_Registro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //javax.swing.JOptionPane.showMessageDialog(this, "REGISTRANDO:\n Usuario: " + TextFieldNombre.getText() + "" + TextFieldApellido.getText() + "\n Rol: " + SeleccionRol.getSelectedItem().toString());
     }//GEN-LAST:event_PanelBotonRegistroMouseClicked
 
     /**

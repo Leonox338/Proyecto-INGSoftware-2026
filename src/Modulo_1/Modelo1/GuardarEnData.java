@@ -1,17 +1,22 @@
 package Modulo_1.Modelo1;
-import Data.Usuarios.Usuario;
+import data.Usuario.Usuario;
+import java.io.File;
 import java.nio.file.StandardOpenOption;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Scanner;
 public class GuardarEnData {
-public void GuardarUsuarios( Usuario u) throws IOException
+ public GuardarEnData() throws IOException{
+     String a ="";
+ }
+ 
+public boolean GuardarUsuarios( Usuario u) throws IOException
 {
   switch(u.Urol.toLowerCase()){
       case ("estudiante"):
-      Path RutaUsuarioEstudiantes = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Estudiantes.txt");
+      File FileEstudiante=new File("Estudiantes.txt");
+      Path RutaUsuarioEstudiantes = Path.of("Estudiantes.txt");
       String ContenidoEstudiante= """
                     --------------------------------------
                         Nombre: %s
@@ -23,10 +28,12 @@ public void GuardarUsuarios( Usuario u) throws IOException
                         Carrera: %s
                     --------------------------------------
                         """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.E.Efacultad,u.E.Ecarrera);
+     
       Files.writeString(RutaUsuarioEstudiantes, ContenidoEstudiante, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
-      break;
-      case ("empleado")://C:\Users\Usuario\Documents\visual estudio azul\Proyecto de ing\src\data
-          Path RutaUsuarioEmpleados = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Empleadoss.txt");
+      return FileEstudiante.exists();
+      case ("empleado"):
+          File FileEmpleado=new File("Empleados.txt");
+          Path RutaUsuarioEmpleados = Path.of("Empleados.txt");
           String ContenidoEmpleado= """
                     --------------------------------------
                         Nombre: %s
@@ -40,9 +47,10 @@ public void GuardarUsuarios( Usuario u) throws IOException
                     --------------------------------------
                         """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.Emp.EmpArea);
       Files.writeString(RutaUsuarioEmpleados, ContenidoEmpleado, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
-      break;
+      return FileEmpleado.exists();
       case ("profesor"):
-          Path RutaUsuarioProfesor = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Profesores.txt");
+          File FileProf= new File("Profesores.txt");
+          Path RutaUsuarioProfesor = Path.of("Profesores.txt");
           String ContenidoProfesor= """
                     --------------------------------------
                         Nombre: %s
@@ -56,9 +64,10 @@ public void GuardarUsuarios( Usuario u) throws IOException
                     --------------------------------------
                         """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.P.Pfacultad,u.P.PCarrera,u.P.PMateria);
       Files.writeString(RutaUsuarioProfesor, ContenidoProfesor, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
-      break;
+     return FileProf.exists();
       case ("conductor"):
-         Path RutaUsuarioConductor = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Conductores.txt");
+         File FileConductor= new File ("Conductores.txt");
+         Path RutaUsuarioConductor = Path.of("Conductores.txt");
          String licen;
          if(u.C.Clicencia==false){
              licen = "sin licencia" ;
@@ -76,9 +85,10 @@ public void GuardarUsuarios( Usuario u) throws IOException
                     --------------------------------------
                         """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,licen);
       Files.writeString(RutaUsuarioConductor, ContenidoConductor, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
-      break;
+      return FileConductor.exists();
       case ("publico general"):
-      Path RutaUsuarioPublicG = Path.of("C:\\Users\Usuario\\Documents\\visual estudio azul\\Proyecto de ing\\src\\data\\Usuario\\Publico_General.txt");
+      File FilePG= new File ("Publico_General.txt");
+          Path RutaUsuarioPublicG = Path.of("Publico_General.txt");
           String ContenidoPG= """
                     --------------------------------------
                         Nombre: %s
@@ -90,9 +100,10 @@ public void GuardarUsuarios( Usuario u) throws IOException
                     --------------------------------------
                         """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.PG.PGDireccion);
       Files.writeString(RutaUsuarioPublicG, ContenidoPG, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
-      break;
+      return FilePG.exists();
       default:
-      break;
+      return false;
   }//Del Switch
 }// de la funcion
 }// de la clase
+

@@ -1,0 +1,9 @@
+--------------------------------------
+    Nombre: prueba
+    Apellido:  hecandolebolas
+    Cedula: 123456
+    Correo:  pajuo3mil
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
