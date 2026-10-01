@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import javax.swing.JOptionPane;
 import Modulo_1.Modelo1.GuardarEnData;
 import data.Usuario.Usuario;
-
+import Modulo_3.Vista3.InterfazLogin;
 public class Interfaz_Registro extends javax.swing.JFrame {
 
     int xMouse, yMouse;
@@ -384,7 +384,7 @@ pack();
     }//GEN-LAST:event_SeleccionRolMouseExited
 
     private void PanelBotonRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelBotonRegistroMouseClicked
-       Usuario User;
+       Usuario User; // esta parte es para guardar los datos de la interfaz en el .txt, te ayude a adelantar gocho, revisalo ve que puedes cambiar y que no (que lo que puedes cambiar es que reciba facultad, carrera y asi)
       String nombre,apellido,correo,rol;
       int cedula;
       nombre= TextFieldNombre.getText();
@@ -399,6 +399,9 @@ pack();
             if(D.GuardarUsuarios(User)){
                 String mensaje="!Registro Guardado con Exito \n\n"+"Nombre: "+nombre+" "+apellido+"\n"+"Correo: "+correo;
                 JOptionPane.showMessageDialog(this,mensaje, "Registro Exitoso!", JOptionPane.INFORMATION_MESSAGE);
+                InterfazLogin login= new InterfazLogin();
+               login.setVisible(true);
+               this.dispose();
             }
 //javax.swing.JOptionPane.showMessageDialog(this, "REGISTRANDO:\n Usuario: " + TextFieldNombre.getText() + "" + TextFieldApellido.getText() + "\n Rol: " + SeleccionRol.getSelectedItem().toString());
         } catch (IOException ex) {

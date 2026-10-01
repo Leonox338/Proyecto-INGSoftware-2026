@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "InterfazLogin",
+            "request": "launch",
+            "mainClass": "Modulo_3.Vista3.InterfazLogin",
+            "projectName": "Proyecto de ing_9224e92d"
+        },
+        {
+            "type": "java",
             "name": "Interfaz_Registro",
             "request": "launch",
             "mainClass": "Modulo_1.Vista1.Interfaz_Registro",

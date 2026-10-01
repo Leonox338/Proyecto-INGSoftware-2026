@@ -7,3 +7,21 @@
     Facultad: 
     Carrera: 
 --------------------------------------
+--------------------------------------
+    Nombre:  1
+    Apellido:  1
+    Cedula: 1
+    Correo:  1
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: leonardo
+    Apellido:  castellanos
+    Cedula: 31668730
+    Correo:  leonox33
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
