@@ -1,0 +1,8 @@
+/build/
+/dist/
+/nbproject/private/
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/project.properties
+*.class
+.DS_Store

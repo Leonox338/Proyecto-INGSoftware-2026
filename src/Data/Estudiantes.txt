@@ -1,0 +1,135 @@
+--------------------------------------
+    Nombre: leonidas
+    Apellido: Castellanos
+    Cedula: 123456
+    Correo: leonidas
+    Rol: estudiante
+    Facultad: Ciencias
+    Carrera: Computacion
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: l
+    Apellido:  l
+    Cedula: 123
+    Correo:  l
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre:  leo
+    Apellido:  prueba
+    Cedula: 1245
+    Correo:  leonidas
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre:  leo
+    Apellido:  prueba
+    Cedula: 1245
+    Correo:  leonidas
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------

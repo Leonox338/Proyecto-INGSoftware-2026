@@ -1,0 +1,36 @@
+--------------------------------------
+    Nombre: leonidas
+    Apellido:  prueba
+    Cedula: 123456
+    Correo:  leonidas
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre:  hermano
+    Apellido:  teAMoneatbeans
+    Cedula: 123456
+    Correo:  loveneatbeans
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre:  leonardo
+    Apellido:  Castellanos
+    Cedula: 123456
+    Correo:  leonidas
+    Rol: Estudiante
+    Facultad: 
+    Carrera: 
+--------------------------------------
+--------------------------------------
+    Nombre: leonidas
+    Apellido:  probando
+    Cedula: 123456
+    Correo:  elcodigo
+    Rol: Estudiante
+    Facultad: Ciencias
+    Carrera: Computacion
+--------------------------------------
