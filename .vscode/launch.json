@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "InterfazLogin",
+            "request": "launch",
+            "mainClass": "Modulo_3.Vista3.InterfazLogin",
+            "projectName": "Proyecto de ing_9224e92d"
+        },
+        {
+            "type": "java",
+            "name": "Interfaz_Registro",
+            "request": "launch",
+            "mainClass": "Modulo_1.Vista1.Interfaz_Registro",
+            "projectName": "Proyecto de ing_9224e92d"
+        },
+        {
+            "type": "java",
+            "name": "Interfaz_Registro",
+            "request": "launch",
+            "mainClass": "Modulo1.Vista.Interfaz_Registro",
+            "projectName": "Proyecto de ing_9224e92d"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Modulo1.Vista.Main",
+            "projectName": "Proyecto de ing_9224e92d"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
