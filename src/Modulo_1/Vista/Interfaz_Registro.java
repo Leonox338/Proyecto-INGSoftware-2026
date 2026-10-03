@@ -592,7 +592,7 @@ public class Interfaz_Registro extends javax.swing.JFrame {
       correo=TextFieldEmail.getText();
       rol=SeleccionRol.getSelectedItem().toString();
       contraseña=TextFieldContraseña.getText();
-      User=new Usuario(nombre,apellido,cedula,correo,rol);
+      User=new Usuario(nombre,apellido,cedula,correo,rol,contraseña);
         try {
             switch(rol.toLowerCase()){
             case("estudiante"):

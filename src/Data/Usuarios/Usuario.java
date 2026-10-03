@@ -1,6 +1,7 @@
 package Data.Usuarios ;
 import java.util.Scanner;
 public class Usuario{
+        public String UPasword;//Variable de la contraseña
         public String Uemail; //variable del Correo
         public String Uname; //variable del nombre
         public String Uapellido; //variable del Apellido
@@ -11,7 +12,8 @@ public class Usuario{
         public Estudiante E; //si el Usuario es Estudiante se le instancian datos referente a este rol
         public Publico_General PG; //si el Usuario es Publico general se le instancian mas datos referente a este rol
         public Empleado Emp; //variable del nombre
-        public Usuario( String Nombre, String Apellido,int Cedula, String Correo, String roll ){
+        public Usuario( String Nombre, String Apellido,int Cedula, String Correo, String roll, String Pasword){
+         UPasword=Pasword;
          Uname=Nombre;
          Uapellido= Apellido;
          Ucedula=Cedula;
