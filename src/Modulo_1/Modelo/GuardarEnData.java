@@ -24,11 +24,12 @@ public boolean GuardarUsuarios( Usuario u) throws IOException
                         Apellido: %s
                         Cedula: %s
                         Correo: %s
+                        Contraseña: %s
                         Rol: %s
                         Facultad: %s
                         Carrera: %s
                     --------------------------------------
-                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.E.Efacultad,u.E.Ecarrera);
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.UPasword,u.Urol,u.E.Efacultad,u.E.Ecarrera);
      
       Files.writeString(RutaUsuarioEstudiantes, ContenidoEstudiante, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
       return FileEstudiante.exists();
@@ -41,12 +42,11 @@ public boolean GuardarUsuarios( Usuario u) throws IOException
                         Apellido: %s
                         Cedula: %s
                         Correo: %s
+                        Contraseña: %s
                         Rol: %s
-                        Facultad: %s
-                        Carrera: %s
                         Area: %s 
                     --------------------------------------
-                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.Emp.EmpArea);
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.UPasword,u.Urol,u.Emp.EmpArea);
       Files.writeString(RutaUsuarioEmpleados, ContenidoEmpleado, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
       return FileEmpleado.exists();
       case ("profesor"):
@@ -58,33 +58,29 @@ public boolean GuardarUsuarios( Usuario u) throws IOException
                         Apellido: %s
                         Cedula: %s
                         Correo: %s
+                        Contraseña: %s
                         Rol: %s
                         Facultad: %s
                         Carrera: %s
                         Materia que Dicta: %s 
                     --------------------------------------
-                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.P.Pfacultad,u.P.PCarrera,u.P.PMateria);
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.UPasword,u.Urol,u.P.Pfacultad,u.P.PCarrera,u.P.PMateria);
       Files.writeString(RutaUsuarioProfesor, ContenidoProfesor, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
      return FileProf.exists();
       case ("conductor"):
          File FileConductor= new File ("Conductores.txt");
          Path RutaUsuarioConductor = Path.of("Conductores.txt");
-         String licen;
-         if(u.C.Clicencia==false){
-             licen = "sin licencia" ;
-         }else{
-             licen= "licencia Certificada";
-         }
          String ContenidoConductor= """
                     --------------------------------------
                         Nombre: %s
                         Apellido: %s
                         Cedula: %s
                         Correo: %s
+                        Contraseña: %s
                         Rol: %s
-                        Licenia %s 
+                        Matricula: %s 
                     --------------------------------------
-                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,licen);
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.UPasword,u.Urol,u.C.CMatricula);
       Files.writeString(RutaUsuarioConductor, ContenidoConductor, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
       return FileConductor.exists();
       case ("publico general"):
@@ -96,10 +92,11 @@ public boolean GuardarUsuarios( Usuario u) throws IOException
                         Apellido: %s
                         Cedula: %s
                         Correo: %s
+                        Contraseña: %s
                         Rol: %s
                         Direccion: %s 
                     --------------------------------------
-                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.Urol,u.PG.PGDireccion);
+                        """.formatted(u.Uname,u.Uapellido,u.Ucedula,u.Uemail,u.UPasword,u.Urol,u.PG.PGDireccion);
       Files.writeString(RutaUsuarioPublicG, ContenidoPG, StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);
       return FilePG.exists();
       default:

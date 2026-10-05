@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Modulo_7.Vista7;
-
+import Modulo_7.Vista7.Interfazitinerario1;
 import java.awt.Color;
 
 /**
@@ -13,9 +13,22 @@ import java.awt.Color;
 public class InterfazItinerario2 extends javax.swing.JFrame {
 
      int Xmouse, Ymouse;
+     private Interfazitinerario1 ventanaPrincipal;
+     public InterfazItinerario2(Interfazitinerario1 ventanaPrincipal) {
+        initComponents();
+        this.ventanaPrincipal = ventanaPrincipal;
+        
+        // Agregar el evento de clic al botón Guardar (jPanel4)
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+    }
     public InterfazItinerario2() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,6 +77,7 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setForeground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -73,6 +87,11 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(244, 208, 63));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -100,7 +119,7 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Dia", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Trayecto", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" }));
         jComboBox1.setBorder(null);
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +127,7 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 300, 40));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 300, 40));
 
         jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
@@ -127,12 +146,17 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Ruta", "Ruta Urbana", "Ruta ExtraUrbana" }));
         jComboBox3.setBorder(null);
         jComboBox3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jComboBox3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jComboBox3MousePressed(evt);
+            }
+        });
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 300, 40));
+        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 300, 40));
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
@@ -463,7 +487,6 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
     private boolean menuExpandido = false;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         menuExpandido = !menuExpandido;
-
         // 2. Mostrar u ocultar el panel del menú
         MenuExpandido.setVisible(menuExpandido);
 
@@ -553,6 +576,99 @@ public class InterfazItinerario2 extends javax.swing.JFrame {
         Xmouse=evt.getX();
         Ymouse=evt.getY();
     }//GEN-LAST:event_BarraMousePressed
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // 1. Obtener los valores seleccionados de los componentes
+    String dia = jComboBox2.getSelectedItem().toString(); 
+    String hora = jTextField1.getText();
+    String ruta = jComboBox3.getSelectedItem().toString();
+    String trayecto = jComboBox1.getSelectedItem().toString();
+
+    // 2. Validar que se hayan seleccionado datos válidos (sin las etiquetas del IDE)
+    if (dia.equals("Seleccione Dia") || ruta.equals("Seleccione Ruta") || hora.isEmpty() || hora.equals("Ingrese Hora")) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos correctamente.");
+        return;
+    }
+
+    // 3. Si la ventana principal existe, agregar la fila a su tabla
+    if (ventanaPrincipal != null) {
+        Object[] nuevaFila = {dia, ruta, trayecto, hora};
+        ventanaPrincipal.agregarFilaTabla(nuevaFila);
+    }
+
+    // 4. Cerrar esta ventana de registro
+    this.dispose();
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jComboBox3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox3MousePressed
+        String rutaSeleccionada = jComboBox3.getSelectedItem().toString();
+    
+    javax.swing.DefaultComboBoxModel<String> modeloTrayectos;
+    
+    if (rutaSeleccionada.equals("Ruta Urbana")) {
+        // Trayectos predefinidos para Ruta Urbana (ejemplos)
+        String[] urbanos = {
+            "Seleccione Trayecto", 
+            "UCV - Plaza Venezuela", 
+            "UCV - Bellas Artes", 
+            "UCV-PARQUE DEL ESTE" ,
+            "PARQUE DEL ESTE-UCV",
+            "UCV-BELLO MONTE" ,
+            "UCV-AV.FUERZAS ARMADAS" ,
+            "AV.FUERZAS ARMADAS-UCV" ,
+            "UCV-ESCUELA VARGAS" ,
+            "ESCUELA VARGAS-UCV" ,
+            "UCV-CATIA/PZA.O'LEARY" ,
+            "CATIA/PZA.O'LEARY-UCV" ,
+            "UCV-SAN MARTIN/CAPUCHINOS" ,
+             "SAN MARTIN/CAPUCHINOS-UCV" ,
+            "UCV-ALGODONAL/CARAPITA" ,
+            "ALGODONAL/CARAPITA-UCV" ,
+            "UCV-COTA 905" ,
+            "COTA 905-UCV" ,
+            "UCV-RUIZ PINERDA" ,
+            "RUIZ PINERDA-UCV" ,
+            "UCV-CARICUAO" ,
+            "CARICUAO-UCV",
+            "UCV-AV INTERCOMUNAL VALLE/COCHE",
+            "AV INTERCOMUNAL VALLE/COCHE-UCV"
+        };
+        modeloTrayectos = new javax.swing.DefaultComboBoxModel<>(urbanos);
+        jComboBox1.setModel(modeloTrayectos); // Asume que tu combo de trayecto se llama jComboBox4
+        
+    } else if (rutaSeleccionada.equals("Ruta ExtraUrbana")) {
+        // Trayectos predefinidos para Ruta ExtraUrbana (ejemplos)
+        String[] extraurbanos = {
+            "Seleccione Trayecto", 
+            "UCV-GUARENAS", 
+            "GUARENAS-UCV", 
+            "UCV-LA GUAIRA",
+            "LA GUAIRA-UCV",
+            "UCV-LOS TEQUES",
+            "LOS TEQUES-UCV",
+            "UCV-TEJERIAS",
+            "TEJERIAS-UCV",
+            "UCV-LA VICTORIA",
+            "LA VICTORIA-UCV",
+            "UCV-MARACAY",
+            "MARACAY-UCV",
+            "UCV-CHARALLAVE/CUA",
+            "CHARALLLAVE/CUA-UCV",
+            "UCV-OCUMARE DEL TUY",
+            "OCUMARE DEL TUY-UCV",
+            "UCV-SANTA TERESA DEL TUY",
+            "SANTA TERESA DEL TUY-UCV"
+        };
+        modeloTrayectos = new javax.swing.DefaultComboBoxModel<>(extraurbanos);
+        jComboBox1.setModel(modeloTrayectos);
+        
+    } else {
+        // Opción por defecto si selecciona "Seleccione Ruta"
+        String[] porDefecto = {"Seleccione Trayecto"};
+        modeloTrayectos = new javax.swing.DefaultComboBoxModel<>(porDefecto);
+        jComboBox1.setModel(modeloTrayectos);
+    }
+    }//GEN-LAST:event_jComboBox3MousePressed
 
     /**
      * @param args the command line arguments

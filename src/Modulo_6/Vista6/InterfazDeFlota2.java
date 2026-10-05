@@ -11,12 +11,20 @@ import java.awt.Color;
  * @author Usuario
  */
 public class InterfazDeFlota2 extends javax.swing.JFrame {
-    private javax.swing.JTable tablaPrincipal;
+    private javax.swing.JTable tablaPrincipal;//añadido
     int Xmouse, Ymouse;
+    private InterfazDeFlota1 interfazFlota1;
     public InterfazDeFlota2() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-    }
+    }//añadido
+    public InterfazDeFlota2(InterfazDeFlota1 ventana1) {
+    initComponents();
+    this.interfazFlota1 = ventana1;
+    // Opcional para que al cerrar la ventana 2 no se cierre todo el programa:
+    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+}
+    //añadido
     public InterfazDeFlota2(javax.swing.JTable Tabla) {
         initComponents();
         this.tablaPrincipal = Tabla;
@@ -42,7 +50,7 @@ public class InterfazDeFlota2 extends javax.swing.JFrame {
         txtModelo = new javax.swing.JTextField();
         txtUnidad = new javax.swing.JTextField();
         txtCapacidad = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        GuardarUnidad = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -86,105 +94,145 @@ public class InterfazDeFlota2 extends javax.swing.JFrame {
         txtConductor.setBackground(new java.awt.Color(255, 255, 255));
         txtConductor.setForeground(new java.awt.Color(0, 0, 0));
         txtConductor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtConductor.setText("jTextField1");
+        txtConductor.setText("Ingrese Conductor");
+        txtConductor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtConductorMousePressed(evt);
+            }
+        });
         txtConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtConductorActionPerformed(evt);
             }
         });
-        jPanel2.add(txtConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 300, 40));
+        jPanel2.add(txtConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 300, 40));
 
         txtFlota.setBackground(new java.awt.Color(255, 255, 255));
         txtFlota.setForeground(new java.awt.Color(0, 0, 0));
         txtFlota.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFlota.setText("jTextField1");
+        txtFlota.setText("Ingrese Flota");
+        txtFlota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtFlotaMousePressed(evt);
+            }
+        });
         txtFlota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFlotaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtFlota, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 300, 40));
+        jPanel2.add(txtFlota, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 300, 40));
 
         txtPlaca.setBackground(new java.awt.Color(255, 255, 255));
         txtPlaca.setForeground(new java.awt.Color(0, 0, 0));
         txtPlaca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtPlaca.setText("jTextField1");
+        txtPlaca.setText("Ingrese Placa");
+        txtPlaca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtPlacaMousePressed(evt);
+            }
+        });
         txtPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPlacaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 300, 40));
+        jPanel2.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 300, 40));
 
         txtEstado.setBackground(new java.awt.Color(255, 255, 255));
         txtEstado.setForeground(new java.awt.Color(0, 0, 0));
         txtEstado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtEstado.setText("jTextField1");
+        txtEstado.setText("Ingrese Estado");
+        txtEstado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtEstadoMousePressed(evt);
+            }
+        });
         txtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEstadoActionPerformed(evt);
             }
         });
-        jPanel2.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 300, 40));
+        jPanel2.add(txtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 300, 40));
 
         txtModelo.setBackground(new java.awt.Color(255, 255, 255));
         txtModelo.setForeground(new java.awt.Color(0, 0, 0));
         txtModelo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtModelo.setText("jTextField1");
+        txtModelo.setText("Ingrese Modelo");
+        txtModelo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtModeloMousePressed(evt);
+            }
+        });
         txtModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtModeloActionPerformed(evt);
             }
         });
-        jPanel2.add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 300, 40));
+        jPanel2.add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 300, 40));
 
         txtUnidad.setBackground(new java.awt.Color(255, 255, 255));
         txtUnidad.setForeground(new java.awt.Color(0, 0, 0));
         txtUnidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtUnidad.setText("jTextField1");
+        txtUnidad.setText("Ingrese Unidad");
+        txtUnidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtUnidadMousePressed(evt);
+            }
+        });
         txtUnidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUnidadActionPerformed(evt);
             }
         });
-        jPanel2.add(txtUnidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 300, 40));
+        jPanel2.add(txtUnidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 300, 40));
 
         txtCapacidad.setBackground(new java.awt.Color(255, 255, 255));
         txtCapacidad.setForeground(new java.awt.Color(0, 0, 0));
         txtCapacidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCapacidad.setText("jTextField1");
+        txtCapacidad.setText("Ingrese número de la Unidad");
+        txtCapacidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtCapacidadMousePressed(evt);
+            }
+        });
         txtCapacidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCapacidadActionPerformed(evt);
             }
         });
-        jPanel2.add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 300, 40));
+        jPanel2.add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 300, 40));
 
-        jPanel4.setBackground(new java.awt.Color(244, 208, 63));
+        GuardarUnidad.setBackground(new java.awt.Color(244, 208, 63));
+        GuardarUnidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GuardarUnidadMouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Guardar");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout GuardarUnidadLayout = new javax.swing.GroupLayout(GuardarUnidad);
+        GuardarUnidad.setLayout(GuardarUnidadLayout);
+        GuardarUnidadLayout.setHorizontalGroup(
+            GuardarUnidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GuardarUnidadLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        GuardarUnidadLayout.setVerticalGroup(
+            GuardarUnidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GuardarUnidadLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 140, 40));
+        jPanel2.add(GuardarUnidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 140, 40));
 
         Fondo.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 450, 570));
 
@@ -613,6 +661,77 @@ public class InterfazDeFlota2 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_Seccion4MouseClicked
 
+    private void GuardarUnidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarUnidadMouseClicked
+        String campo1= txtConductor.getText();
+        String campo2= txtFlota.getText();
+        String campo3= txtPlaca.getText();
+        String campo4= txtEstado.getText();
+        String campo5= txtModelo.getText();
+        String campo6= txtUnidad.getText();
+        String campo7= txtCapacidad.getText();
+        if (interfazFlota1 != null) {
+        interfazFlota1.agregarFilaTabla(new Object[]{campo1, campo2, campo3,campo4,campo5,campo6,campo7});
+    }
+    InterfazDeFlota1 Verflota= new InterfazDeFlota1();
+        Verflota.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GuardarUnidadMouseClicked
+
+    private void txtFlotaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFlotaMousePressed
+        txtFlota.setText("");
+        txtCapacidad.setText("Ingrese Capacidad");
+        txtEstado.setText("Ingrese Estado");
+        txtModelo.setText("Ingrese Modelo");
+        txtPlaca.setText("Ingrese Placa");
+        txtUnidad.setText("Ingrese Unidad");
+    }//GEN-LAST:event_txtFlotaMousePressed
+
+    private void txtConductorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtConductorMousePressed
+        txtConductor.setText("");
+        txtFlota.setText("Ingrese Flota");
+        txtCapacidad.setText("Ingrese Capacidad");
+        txtEstado.setText("Ingrese Estado");
+        txtModelo.setText("Ingrese Modelo");
+        txtPlaca.setText("Ingrese Placa");
+        txtUnidad.setText("Ingrese Unidad");
+    }//GEN-LAST:event_txtConductorMousePressed
+
+    private void txtPlacaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPlacaMousePressed
+        
+        txtCapacidad.setText("Ingrese Capacidad");
+        txtEstado.setText("Ingrese Estado");
+        txtModelo.setText("Ingrese Modelo");
+        txtPlaca.setText("");
+        txtUnidad.setText("Ingrese Unidad");
+    }//GEN-LAST:event_txtPlacaMousePressed
+
+    private void txtEstadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEstadoMousePressed
+        
+        txtCapacidad.setText("Ingrese Capacidad");
+        txtEstado.setText("");
+        txtModelo.setText("Ingrese Modelo");
+        txtUnidad.setText("Ingrese Unidad");
+    }//GEN-LAST:event_txtEstadoMousePressed
+
+    private void txtModeloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtModeloMousePressed
+
+        txtCapacidad.setText("Ingrese Capacidad");
+        txtModelo.setText("");
+        txtUnidad.setText("Ingrese Unidad");
+    }//GEN-LAST:event_txtModeloMousePressed
+
+    private void txtUnidadMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUnidadMousePressed
+
+        txtCapacidad.setText("Ingrese Capacidad");
+        txtUnidad.setText("");
+    }//GEN-LAST:event_txtUnidadMousePressed
+
+    private void txtCapacidadMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCapacidadMousePressed
+
+        txtCapacidad.setText("");
+
+    }//GEN-LAST:event_txtCapacidadMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -654,6 +773,7 @@ public class InterfazDeFlota2 extends javax.swing.JFrame {
     private javax.swing.JPanel BotonExit;
     private javax.swing.JPanel Fondo;
     private javax.swing.JLabel FotoPerfil;
+    private javax.swing.JPanel GuardarUnidad;
     private javax.swing.JLabel LabelDeSalida;
     private javax.swing.JLabel LabelSeccion1;
     private javax.swing.JLabel LabelSeccion2;
@@ -673,7 +793,6 @@ public class InterfazDeFlota2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField txtCapacidad;
     private javax.swing.JTextField txtConductor;
     private javax.swing.JTextField txtEstado;

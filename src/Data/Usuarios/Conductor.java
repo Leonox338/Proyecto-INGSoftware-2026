@@ -1,19 +1,17 @@
 package Data.Usuarios;
-
 import java.util.Scanner;
-
 public class Conductor {
-public boolean Clicencia;    
+public String CMatricula;    
     public Conductor( ){
-        Clicencia=false;
+        CMatricula="";
     }
-    public Conductor( boolean lic)
+    public Conductor( String lic)
     {
-    Clicencia = lic;
+    CMatricula = lic;
     }
     public void Carga(){
      Scanner text = new Scanner (System.in);
         System.out.print("Es Verdad que el conductor tiene licencia: ");
-        Clicencia=text.nextBoolean();
+        CMatricula=text.nextLine();
      }
 }

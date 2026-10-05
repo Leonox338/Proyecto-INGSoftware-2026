@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Modulo_7.Vista7;
-
+import Modulo_7.Vista7.InterfazItinerario2;
 import java.awt.Color;
 
 /**
@@ -16,6 +16,11 @@ public class Interfazitinerario1 extends javax.swing.JFrame {
        initComponents();
     MenuExpandido.setVisible(false);
     }
+    public void agregarFilaTabla(Object[] datosFila) {
+    // Obtenemos el modelo de tu JTable (asegúrate de cambiar jTable1 por el nombre real de tu tabla si es diferente)
+    javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+    modelo.addRow(datosFila);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,6 +61,9 @@ public class Interfazitinerario1 extends javax.swing.JFrame {
         LabelDeSalida = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         Fondo.setBackground(new java.awt.Color(255, 255, 255));
         Fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -174,6 +182,11 @@ public class Interfazitinerario1 extends javax.swing.JFrame {
         SeccionBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BotonRegistrarHorario.setBackground(new java.awt.Color(234, 197, 48));
+        BotonRegistrarHorario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRegistrarHorarioMouseClicked(evt);
+            }
+        });
 
         RegistrarHorario.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         RegistrarHorario.setForeground(new java.awt.Color(0, 0, 0));
@@ -473,7 +486,7 @@ public class Interfazitinerario1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,6 +588,11 @@ public class Interfazitinerario1 extends javax.swing.JFrame {
         Xmouse=evt.getX();
         Ymouse=evt.getY();
     }//GEN-LAST:event_BarraMousePressed
+
+    private void BotonRegistrarHorarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarHorarioMouseClicked
+      InterfazItinerario2 CrearItinerario= new InterfazItinerario2(this);
+        CrearItinerario.setVisible(true); 
+    }//GEN-LAST:event_BotonRegistrarHorarioMouseClicked
     
     /**
      * @param args the command line arguments

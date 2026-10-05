@@ -1,0 +1,19 @@
+--------------------------------------
+    Nombre:  Leonardo 
+    Apellido:  Castellanos
+    Cedula: 225588
+    Correo:  leonardoucv
+    Rol: Estudiante
+    Facultad: Ciencias
+    Carrera: Computacion
+--------------------------------------
+--------------------------------------
+    Nombre:  leonardo
+    Apellido:  castellanos
+    Cedula: 226699
+    Correo:  leonidas
+    Contraseña:  123456
+    Rol: Estudiante
+    Facultad: Ciencias
+    Carrera: Computacion
+--------------------------------------

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Modulo_6.Vista6;
-
+import Modulo_6.Vista6.InterfazDeFlota2;
 import Modulo_7.Vista7.Interfazitinerario1;
 import java.awt.Color;
 
@@ -16,6 +16,10 @@ public class InterfazDeFlota1 extends javax.swing.JFrame {
     public InterfazDeFlota1() {
         initComponents();
     }
+    public void agregarFilaTabla(Object[] datosFila) {
+    javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) jTable1.getModel();
+    modelo.addRow(datosFila);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -103,6 +107,18 @@ public class InterfazDeFlota1 extends javax.swing.JFrame {
         SeccionBotones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BotonRegistrarUnidad.setBackground(new java.awt.Color(234, 197, 48));
+        BotonRegistrarUnidad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonRegistrarUnidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRegistrarUnidadMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonRegistrarUnidadMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonRegistrarUnidadMouseExited(evt);
+            }
+        });
 
         RegistrarUnidad.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         RegistrarUnidad.setForeground(new java.awt.Color(0, 0, 0));
@@ -133,6 +149,12 @@ public class InterfazDeFlota1 extends javax.swing.JFrame {
         BotonEliminarUnidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BotonEliminarUnidadMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonEliminarUnidadMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonEliminarUnidadMouseExited(evt);
             }
         });
 
@@ -596,6 +618,33 @@ public class InterfazDeFlota1 extends javax.swing.JFrame {
         VerItinerario.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Seccion4MouseClicked
+
+    private void BotonRegistrarUnidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarUnidadMouseClicked
+        InterfazDeFlota2 ventana2 = new InterfazDeFlota2(this);
+        ventana2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BotonRegistrarUnidadMouseClicked
+
+    private void BotonRegistrarUnidadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarUnidadMouseEntered
+       BotonRegistrarUnidad.setBackground(new Color(252,235,122));
+       RegistrarUnidad.setForeground(Color.black);
+       
+    }//GEN-LAST:event_BotonRegistrarUnidadMouseEntered
+
+    private void BotonRegistrarUnidadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarUnidadMouseExited
+        BotonRegistrarUnidad.setBackground(new Color(234,197,48));
+       RegistrarUnidad.setForeground(Color.black);
+    }//GEN-LAST:event_BotonRegistrarUnidadMouseExited
+
+    private void BotonEliminarUnidadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarUnidadMouseEntered
+        BotonEliminarUnidad.setBackground(new Color(255,40,69));
+        EliminarUnidad.setForeground(Color.white);
+    }//GEN-LAST:event_BotonEliminarUnidadMouseEntered
+
+    private void BotonEliminarUnidadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarUnidadMouseExited
+        BotonEliminarUnidad.setBackground(new Color(255,0,51));
+        EliminarUnidad.setForeground(Color.black);
+    }//GEN-LAST:event_BotonEliminarUnidadMouseExited
 
     /**
      * @param args the command line arguments

@@ -157,7 +157,7 @@ public class Interfaz_Registro extends javax.swing.JFrame {
 
         SeleccionRol.setBackground(new java.awt.Color(255, 255, 255));
         SeleccionRol.setForeground(new java.awt.Color(51, 51, 51));
-        SeleccionRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Rol", "Estudiante", "Profesor", "Empleado", "Publico  General" }));
+        SeleccionRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Rol", "Estudiante", "Profesor", "Empleado", "Conductor", "Publico  General" }));
         SeleccionRol.setBorder(null);
         SeleccionRol.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SeleccionRol.addItemListener(new java.awt.event.ItemListener() {
@@ -306,7 +306,7 @@ public class Interfaz_Registro extends javax.swing.JFrame {
         TextFieldMatricula.setBackground(new java.awt.Color(255, 255, 255));
         TextFieldMatricula.setForeground(new java.awt.Color(51, 51, 51));
         TextFieldMatricula.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        TextFieldMatricula.setText("Ingrese Area de trabajo");
+        TextFieldMatricula.setText("Ingrese Matricula de Auto Personal");
         TextFieldMatricula.setBorder(null);
         TextFieldMatricula.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -399,9 +399,9 @@ public class Interfaz_Registro extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 390, 570));
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 390, 590));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 420, 570));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 420, 600));
 
         PanelBarra.setBackground(new java.awt.Color(255, 255, 255));
         PanelBarra.setForeground(new java.awt.Color(255, 255, 255));
@@ -535,6 +535,7 @@ public class Interfaz_Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_PanelBotonRegistroMouseExited
 
     private void TextFieldNombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TextFieldNombreMousePressed
+
         TextFieldNombre.setText(" ");
         TextFieldApellido.setText("Ingrese Apellido");
         TextFieldCedula.setText("Ingrese Cedula");
@@ -587,7 +588,6 @@ public class Interfaz_Registro extends javax.swing.JFrame {
       int cedula;
       nombre= TextFieldNombre.getText();
       apellido=TextFieldApellido.getText();
-     // String textocedula=TextFieldCedula.getText();
       cedula= Integer.valueOf(TextFieldCedula.getText().trim());
       correo=TextFieldEmail.getText();
       rol=SeleccionRol.getSelectedItem().toString();
@@ -604,7 +604,7 @@ public class Interfaz_Registro extends javax.swing.JFrame {
             User.P.Pfacultad=TextFieldFacultad.getText();
             User.P.PMateria=TextFieldMateria.getText();
             case("conductor"):
-            //User.C.Clicencia=TextFieldMatricula.getText();
+            User.C.CMatricula=TextFieldMatricula.getText();
             case("empleado"):
             User.Emp.EmpArea=TextFieldArea.getText();
             case("publico general"):
@@ -617,6 +617,9 @@ public class Interfaz_Registro extends javax.swing.JFrame {
             if(D.GuardarUsuarios(User)){
                 String mensaje="!Registro Guardado con Exito \n\n"+"Nombre: "+nombre+" "+apellido+"\n"+"Correo: "+correo;
                 JOptionPane.showMessageDialog(this,mensaje, "Registro Exitoso!", JOptionPane.INFORMATION_MESSAGE);
+                InterfazLogin login=new InterfazLogin();
+                login.setVisible(true);
+                this.dispose();
             }
 //javax.swing.JOptionPane.showMessageDialog(this, "REGISTRANDO:\n Usuario: " + TextFieldNombre.getText() + "" + TextFieldApellido.getText() + "\n Rol: " + SeleccionRol.getSelectedItem().toString());
         } catch (IOException ex) {
@@ -692,7 +695,7 @@ public class Interfaz_Registro extends javax.swing.JFrame {
             TextFieldMateria.setVisible(true);
         }else if(seleccionado.equals("Empleado")){
             TextFieldArea.setVisible(true);
-        }else if(seleccionado.equals("Conducotr")){
+        }else if(seleccionado.equals("Conductor")){
             TextFieldMatricula.setVisible(true);
         }else if(seleccionado.equals("Publico General")){
         TextFieldDireccion.setVisible(true);

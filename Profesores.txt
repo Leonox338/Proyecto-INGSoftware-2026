@@ -8,3 +8,13 @@
     Carrera: 
     Materia que Dicta: 
 --------------------------------------
+--------------------------------------
+    Nombre:  Leonardo
+    Apellido:  Castellanos
+    Cedula: 123456
+    Correo:  LeonardoCA
+    Rol: Profesor
+    Facultad: ciencias
+    Carrera: computacion
+    Materia que Dicta: ing de Software
+--------------------------------------
